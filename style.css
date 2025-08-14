@@ -1,0 +1,72 @@
+/* Custom styles that complement Tailwind CSS */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #E0E0E0;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ASIC Corner Glow Effects */
+.corner-graphic {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Crect x="30" y="30" width="40" height="40" fill="none" stroke="%23D4AF37" stroke-width="2"/%3E%3Cpath d="M30 30 L10 10" stroke="%23D4AF37" stroke-width="1"/%3E%3Cpath d="M70 30 L90 10" stroke="%23D4AF37" stroke-width="1"/%3E%3Cpath d="M30 70 L10 90" stroke="%23D4AF37" stroke-width="1"/%3E%3Cpath d="M70 70 L90 90" stroke="%23D4AF37" stroke-width="1"/%3E%3Cpath d="M50 30 V10" stroke="%23D4AF37" stroke-width="1"/%3E%3Cpath d="M50 70 V90" stroke="%23D4AF37" stroke-width="1"/%3E%3Cpath d="M30 50 H10" stroke="%23D4AF37" stroke-width="1"/%3E%3Cpath d="M70 50 H90" stroke="%23D4AF37" stroke-width="1"/%3E%3Cpath d="M40 40 H20 V60 H40" fill="none" stroke="%23D4AF37" stroke-width="0.5"/%3E%3Cpath d="M60 40 H80 V60 H60" fill="none" stroke="%23D4AF37" stroke-width="0.5"/%3E%3Ccircle cx="10" cy="10" r="2" fill="%23D4AF37"/%3E%3Ccircle cx="90" cy="10" r="2" fill="%23D4AF37"/%3E%3Ccircle cx="10" cy="90" r="2" fill="%23D4AF37"/%3E%3Ccircle cx="90" cy="90" r="2" fill="%23D4AF37"/%3E%3Ccircle cx="50" cy="10" r="2" fill="%23D4AF37"/%3E%3Ccircle cx="10" cy="50" r="2" fill="%23D4AF37"/%3E%3Ccircle cx="90" cy="50" r="2" fill="%23D4AF37"/%3E%3Ccircle cx="50" cy="90" r="2" fill="%23D4AF37"/%3E%3C/svg%3E');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    z-index: -1;
+    animation: pulseGlow 6s infinite ease-in-out;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.corner-graphic:hover {
+    transform: scale(1.25) rotate(var(--rotation, 0deg)); /* Maintain rotation on hover */
+    opacity: 0.6;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+        opacity: 0.2;
+    }
+    50% {
+        filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.6));
+        opacity: 0.4;
+    }
+}
+
+/* Jawa Colors */
+.jawa-maroon { color: #9A2A2A; }
+.bg-jawa-maroon { background-color: #9A2A2A; }
+.border-jawa-maroon { border-color: #9A2A2A; }
+.jawa-gold { color: #D4AF37; }
+.hover\:text-jawa-gold:hover { color: #D4AF37; }
+.hover\:border-jawa-gold:hover { border-color: #D4AF37; }
+.hover\:bg-\[\#800000\]:hover { background-color: #800000; }
+.focus\:border-jawa-gold:focus { border-color: #D4AF37; }
+
+/* Text Effects */
+.text-gradient {
+    background: linear-gradient(90deg, #D4AF37, #E0E0E0, #9A2A2A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.text-shadow-subtle {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in-text {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
